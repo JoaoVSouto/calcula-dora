@@ -34,6 +34,15 @@ header {
   padding: 0 1rem;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
+  position: relative;
+}
+
+header small {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--contrast-text);
+  font-size: 1rem;
 }
 
 header .container {
@@ -46,6 +55,11 @@ header .container {
 header h1 {
   color: #fff;
   font-size: 3rem;
+}
+
+main {
+  position: relative;
+  margin: 0 1rem 1rem;
 }
 
 .calculator {
@@ -129,4 +143,16 @@ header h1 {
 .calculator__buttons .--ac:hover,
 .calculator__buttons .--ac:focus {
   box-shadow: 0 0 8px 0 var(--tertiary);
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
