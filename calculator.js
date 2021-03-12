@@ -94,6 +94,14 @@
     calculatorData.afterDot = INITIAL_CALCULATOR_DATA.afterDot;
   };
 
+  const checkIfDotLogicShouldBeApplied = () => {
+    if (String(calculatorData.currentValue).includes('.')) {
+      const [, afterDot] = String(calculatorData.currentValue).split('.');
+      calculatorData.withDot = true;
+      calculatorData.afterDot = afterDot;
+    }
+  };
+
   updateDisplay();
 
   numbers.zero.addEventListener('click', () => {
@@ -103,6 +111,7 @@
     }
 
     if (calculatorData.isOperating) {
+      resetCalculatorDotLogic();
       calculatorData.currentValue = 0;
     } else if (calculatorData.currentValue !== 0) {
       if (
@@ -142,6 +151,7 @@
           (calculatorData.currentValue === 0 && !calculatorData.withDot) ||
           calculatorData.isOperating
         ) {
+          resetCalculatorDotLogic();
           calculatorData.currentValue = numberValue;
         } else {
           if (
@@ -194,6 +204,8 @@
       (calculatorData.currentValue || calculatorData.currentValue === 0)
     ) {
       executeCalculation();
+      resetCalculatorDotLogic();
+      checkIfDotLogicShouldBeApplied();
       updateDisplay();
     }
 
@@ -222,6 +234,8 @@
       (calculatorData.currentValue || calculatorData.currentValue === 0)
     ) {
       executeCalculation();
+      resetCalculatorDotLogic();
+      checkIfDotLogicShouldBeApplied();
       updateDisplay();
     }
 
@@ -250,6 +264,8 @@
       (calculatorData.currentValue || calculatorData.currentValue === 0)
     ) {
       executeCalculation();
+      resetCalculatorDotLogic();
+      checkIfDotLogicShouldBeApplied();
       updateDisplay();
     }
 
@@ -278,6 +294,8 @@
       (calculatorData.currentValue || calculatorData.currentValue === 0)
     ) {
       executeCalculation();
+      resetCalculatorDotLogic();
+      checkIfDotLogicShouldBeApplied();
       updateDisplay();
     }
 
@@ -291,11 +309,7 @@
     executeCalculation();
 
     resetCalculatorDotLogic();
-    if (String(calculatorData.currentValue).includes('.')) {
-      const [, afterDot] = String(calculatorData.currentValue).split('.');
-      calculatorData.withDot = true;
-      calculatorData.afterDot = afterDot;
-    }
+    checkIfDotLogicShouldBeApplied();
 
     updateDisplay();
 
