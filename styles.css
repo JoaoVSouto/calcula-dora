@@ -1,0 +1,132 @@
+:root {
+  --primary: #0059d9;
+  --secondary: #00cbe6;
+  --tertiary: #00b7ab;
+  --gray: #e6e6e6;
+  --text: #333;
+  --contrast-text: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body,
+button {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  background-color: var(--tertiary);
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+header .container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.calculator {
+  padding: 1rem;
+  margin: -4vh auto 0;
+  max-width: 420px;
+  border-radius: 5px;
+
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.calculator__display {
+  background-color: var(--gray);
+  border-radius: 5px;
+  padding: 0 0.8rem;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.calculator__display p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 5rem;
+  color: var(--text);
+}
+
+.calculator__buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+.calculator__buttons .--rowspan {
+  grid-row: 4 / span 2;
+}
+
+.calculator__buttons .--colspan {
+  grid-column: 3 / span 2;
+}
+
+.calculator__buttons button {
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 2.5rem;
+  background-color: var(--secondary);
+  border-radius: 5px;
+  color: var(--text);
+  transition: all 300ms;
+}
+
+.calculator__buttons button:hover,
+.calculator__buttons button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px 0 var(--secondary);
+}
+
+.calculator__buttons button:active {
+  transform: scale(0.95);
+}
+
+.calculator__buttons .--special {
+  background-color: var(--primary);
+  color: var(--contrast-text);
+}
+
+.calculator__buttons .--special:hover,
+.calculator__buttons .--special:focus {
+  box-shadow: 0 0 8px 0 var(--primary);
+}
+
+.calculator__buttons .--ac {
+  background-color: var(--tertiary);
+  color: var(--contrast-text);
+}
+
+.calculator__buttons .--ac:hover,
+.calculator__buttons .--ac:focus {
+  box-shadow: 0 0 8px 0 var(--tertiary);
+}
