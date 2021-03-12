@@ -25,29 +25,33 @@
     <main>
       <div class="calculator">
         <div class="calculator__display">
-          <p>33.3</p>
+          <p id="display"></p>
         </div>
 
         <div class="calculator__buttons">
-          <button type="button">7</button>
-          <button type="button">8</button>
-          <button type="button">9</button>
-          <button type="button" class="--special">+</button>
-          <button type="button">4</button>
-          <button type="button">5</button>
-          <button type="button">6</button>
-          <button type="button" class="--special">-</button>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-          <button type="button" class="--special">*</button>
-          <button type="button" class="--rowspan">0</button>
-          <button type="button" class="--rowspan --special">=</button>
-          <button type="button">,</button>
-          <button type="button" class="--special">/</button>
-          <button type="button" class="--colspan --ac">AC</button>
+          <button type="button" id="seven">7</button>
+          <button type="button" id="eight">8</button>
+          <button type="button" id="nine">9</button>
+          <button type="button" class="--special" id="sum">+</button>
+          <button type="button" id="four">4</button>
+          <button type="button" id="five">5</button>
+          <button type="button" id="six">6</button>
+          <button type="button" class="--special" id="minus">-</button>
+          <button type="button" id="one">1</button>
+          <button type="button" id="two">2</button>
+          <button type="button" id="three">3</button>
+          <button type="button" class="--special" id="times">&times;</button>
+          <button type="button" class="--rowspan" id="zero">0</button>
+          <button type="button" class="--rowspan --special" id="equal">
+            =
+          </button>
+          <button type="button" id="dot">,</button>
+          <button type="button" class="--special" id="divide">&divide;</button>
+          <button type="button" class="--colspan --ac" id="reset">AC</button>
         </div>
       </div>
     </main>
+
+    <script src="calculator.js"></script>
   </body>
 </html>
